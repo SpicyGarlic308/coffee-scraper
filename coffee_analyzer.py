@@ -70,26 +70,26 @@ st.write(
 
 st.subheader('Data collection')
 st.write(
-    "   This part was the most interesting and had the steepest learning curve. In 2024, I delved into the world of web scraping with beautifulsoup4 (bs4). I " \
-    "built several rudimentry scrapers, mostly pulling news articles, speeches, or updates for policies. From these, I would summarize the data" \
-    " using summarization techniques that I learned while pursuing my degree. I liked bs4 because it parsed the html data from the sites instead" \
-    " of opening the webpages themselves like with Selinum or pyautogui (also pyautogui would involve MUCH more work). " \
-    "Compared to the other scrapers that I have made this is really no different except that I have stayed " \
-    "with this one the longest. Before understanding cron jobs, I would run this twice a month manually. Then, due to several life events, I stopped" \
-    "running this bimonthly, which explains the gap from late 2025 to late 2026. I now have this running on a raspberry pi zero 2w, so as long as" \
-    "I have internet, I will be collecting data and updating this dataset."
+    """   This part was the most interesting and had the steepest learning curve. In 2024, I delved into the world of web scraping with beautifulsoup4 (bs4). I
+    built several rudimentry scrapers, mostly pulling news articles, speeches, or updates for policies. From these, I would summarize the data
+    using summarization techniques that I learned while pursuing my degree. I liked bs4 because it parsed the html data from the sites instead
+    of opening the webpages themselves like with Selinum or pyautogui (also pyautogui would involve MUCH more work). 
+    Compared to the other scrapers that I have made this is really no different except that I have stayed
+    with this one the longest. Before understanding cron jobs, I would run this twice a month manually. Then, due to several life events, I stopped
+    running this bimonthly, which explains the gap from late 2025 to late 2026. I now have this running on a raspberry pi zero 2w, so as long as
+    I have internet, I will be collecting data and updating this dataset."""
 )
 st.write(
-    "   In the other file on my github, there will be the webscraper that I wrote. It scrapes from Coffee Bean Corral," \
-    " a vendor that I have used many times. I think that they are a good metric as they sell unroasted and roasted coffee beans." \
-    "Since coffee needs to be roasted to be served, understanding the sourcing of coffee really puts the final price of a cup" \
-    " into a clearer picture. The scraper itself is simple. It tackles pagination well and the webpages tags" \
-    " are clean and simple to run through. Later iterations needed the headers function as the webpage would block" \
-    " scraping at some point in 2026. I was able to use the find_all functions with the only issue being that some" \
-    " more obscure coffees would return a 'price:' value. Since there were so few in the dataset, I dropped them for " \
-    "ease of use and how little they would affect the overall dataset. Overall, the scraper is a low cost option and can scale easily" \
-    " as long as the web page does not change much. The tags are hardcoded, so that affects the agility and interoperablity" \
-    "of the overall."
+   """    In the other file on my github, there will be the webscraper that I wrote. It scrapes from Coffee Bean Corral,
+     a vendor that I have used many times. I think that they are a good metric as they sell unroasted and roasted coffee beans.
+    Since coffee needs to be roasted to be served, understanding the sourcing of coffee really puts the final price of a cup
+     into a clearer picture. The scraper itself is simple. It tackles pagination well and the webpages tags
+     are clean and simple to run through. Later iterations needed the headers function as the webpage would block
+     scraping at some point in 2026. I was able to use the find_all functions with the only issue being that some
+     more obscure coffees would return a 'price:' value. Since there were so few in the dataset, I dropped them for
+    ease of use and how little they would affect the overall dataset. Overall, the scraper is a low cost option and can scale easily
+     as long as the web page does not change much. The tags are hardcoded, so that affects the agility and interoperablity
+    of the overall."""
 )
 
 st.subheader('Storing and Extracting the data')
