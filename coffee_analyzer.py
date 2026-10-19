@@ -117,7 +117,7 @@ st.write(
 # plotting the data
 
 st.header('The final data!')
-st.caption(f'There are a total of {unique_coffees} coffees from {country_length} countries and blends. Countries with only one coffee type were removed for space.')
+st.caption(f'There are a total of {unique_coffees} coffee varities from {country_length} countries and blends. Countries with only one coffee type were removed for space.')
 
 for country in countries:
     data = coffee_df[coffee_df.country == country]
@@ -135,7 +135,7 @@ for country in countries:
                 )
         ax.set_title(str(country) + ' ' + ' coffee cost')
         
-        ax.set_ylabel('Cost')
+        ax.set_ylabel('Cost in USD ($)')
         ax.yaxis.set_major_locator(MultipleLocator(2))
         ax.yaxis.set_minor_locator(MultipleLocator(0.5))
 
