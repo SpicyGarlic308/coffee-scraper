@@ -54,18 +54,18 @@ st.title('Welcome to my coffee tracker!')
 st.caption(f"Last updated: {formatted_date}")
 
 st.write(
-    "Hello, and welcome to my coffee tracker! This is a project that I began in 2024 because I was curious how changes in " \
-    "global politics, economics, and general shenanigans would affect the price of coffee. I am an avid coffee drinker (as " \
-    "I'd imagine many of you also are) and was concerned how much or little the price of my daily motivation would change." \
-    "I began this project in the middle of my degree when I had some time off. While my skills have improved somewhat, this is" \
-    "still an early version of my inital program. I know there are ways that I could improve it, but honestly, it works well " \
-    "enough for what I want it to do."
+    """Hello, and welcome to my coffee tracker! This is a project that I began in 2024 because I was curious how changes in 
+    global politics, economics, and general shenanigans would affect the price of coffee. I am an avid coffee drinker (as 
+    I'd imagine many of you also are) and was concerned how much or little the price of my daily motivation would change.
+    I began this project in the middle of my degree when I had some time off. While my skills have improved somewhat, this is
+    still an early version of my inital program. I know there are ways that I could improve it, but honestly, it works well
+    enough for what I want it to do."""
 )
 
 st.header('The details')
 st.write(
-    "This project began as a learning tool for data analysis from beginning to end. This covers the data collection, data storage (databasing)," \
-    "extraction from a database, cleaning the data, and making it into something to be analyzed. Lets begin with the data collection."
+    """This project began as a learning tool for data analysis from beginning to end. This covers the data collection, data storage (databasing),
+    extraction from a database, cleaning the data, and making it into something to be analyzed. Lets begin with the data collection."""
 )
 
 st.subheader('Data collection')
@@ -81,14 +81,16 @@ st.write(
 )
 st.write(
    """    In the other file on my github, there will be the webscraper that I wrote. It scrapes from Coffee Bean Corral,
-     a vendor that I have used many times. I think that they are a good metric as they sell unroasted and roasted coffee beans.
+     a vendor that I have used many times (https://coffeebeancorral.com/). I think that they are a good metric as they sell unroasted and roasted coffee beans and 
+     their robots.txt file allows basic webscraping as long as you don't go into individual profiles for purchasing. 
     Since coffee needs to be roasted to be served, understanding the sourcing of coffee really puts the final price of a cup
      into a clearer picture. The scraper itself is simple. It tackles pagination well and the webpages tags
      are clean and simple to run through. Later iterations needed the headers function as the webpage would block
      scraping at some point in 2026. I was able to use the find_all functions with the only issue being that some
      more obscure coffees would return a 'price:' value. Since there were so few in the dataset, I dropped them for
-    ease of use and how little they would affect the overall dataset. Overall, the scraper is a low cost option and can scale easily
-     as long as the web page does not change much. The tags are hardcoded, so that affects the agility and interoperablity
+    ease of use and how little they would affect the dataset. Please note that all prices are for 1 pound of coffee as advertised.
+    If you purchase 3 or more pounds, there is generally a small discount as you are buying in bulk. 
+    Overall, the scraper is a low cost option and can scale easily as long as the web page does not change its tags. The tags are hardcoded, so that affects the agility and interoperablity
     of the overall."""
 )
 
@@ -96,7 +98,8 @@ st.subheader('Storing and Extracting the data')
 st.write(
     f"""Some would call this a big data set. This dataset has {dataframe_length} entries and is growing. Once the
     scraper has finished its scraping for the day, it saves the entries to a sqlite database that is stored on the 
-    pi itself. For the analysis, it pulls the file off of the database to conduct its analysis (this program here).
+    pi itself. A csv file is then generated from that database and uploaded to Github for this analysis to be conducted.
+    Feel free to download the file from my Github. The analysis below is all generated from that CSV file.
     Having an sqlite database is safer, especially during a power outage or sudden shutdown of the pi during the saving
     process. It can be queried much more easily and since I am having this pi run several scrapers and saving to multiple databases on this pi, if 
     something happens concurrently, the data will be safe. Hence, this is why I am using an sqlite database to save 
@@ -109,9 +112,11 @@ st.write(
     With some additional information and more time to see price fluctuations, an acutal analysis could be conducted.
     Basic information such as grow and harvest times, supply shortages/blockages, and other political pressure could
     be used in statisical and ML models to predict future prices. For the general population, this could inform people
-    if your daily coffee with cost more or not. However, for businesses that rely fully or paritally on coffee sales,
-    this could be used for business descisions. Changes could include highlighting harvest times for each region to 
-    see if there is a correlation between price and time."""
+    if your daily coffee will cost more or not. However, for businesses could make policy or product decisions for items that rely on coffee sales.
+    Changes could include highlighting harvest times for each region to see if there is a correlation between price and time.
+    Important dates such as embargos, disasters, or regional conflicts could also identify trends in the data. Currently, I am 
+    researching harvest times for popular coffee supplying regions. Expect later iterations of this analysis to identify harvest times and 
+    highlight those times on the plots below. """
 )
 
 # plotting the data
